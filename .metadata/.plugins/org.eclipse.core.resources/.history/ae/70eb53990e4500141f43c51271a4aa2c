@@ -1,0 +1,21 @@
+package ca.concordia.ece390.VoltmeterApp;
+
+public class StoredListener implements MeasurementListener {
+
+	MeasurementList list = new MeasurementList();
+	View mView = null;
+	
+	StoredListener(View v) {
+		mView = v;
+	}
+	
+	
+	@Override
+	public void handleMeasurement(VoltageMeasurement v) {
+		list.add(v);
+		mView.displayVoltageMeasurement(v);
+		
+		
+	}
+
+}

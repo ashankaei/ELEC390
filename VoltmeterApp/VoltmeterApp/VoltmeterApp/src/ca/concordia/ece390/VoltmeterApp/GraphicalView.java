@@ -1,0 +1,21 @@
+package ca.concordia.ece390.VoltmeterApp;
+
+public class GraphicalView implements View {
+
+	
+	@Override
+	public void displayVoltageMeasurement(VoltageMeasurement v) {
+		// TODO Auto-generated method stub
+			
+			double y;
+			y = 25 * v.getVoltage() + 26;
+			int bars = (int) Math.round(y);
+			//System.out.print(bars);
+			System.out.print(String.format("%8.2f ", v.getTime())+"s");
+			for (int i = 1; i<= bars; i++){
+				System.out.print("|");
+			}
+		System.out.println();
+				
+	}
+}
